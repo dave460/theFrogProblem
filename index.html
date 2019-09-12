@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Fast frog simulator</title>
+</head>
+
+<body>
+	<script src="frog.js"></script>
+	<div>
+		<h3>How many tries?</h3>
+		<input type="number" id="myText">
+
+		<button type="button" onclick="tryIt()">
+			Try it
+		</button>
+	</div>
+	<div id="showOff" style="height: 70px; top: 50%">
+		<br>The result to your problems will be shown here!
+	</div>
+
+	<div>
+		Wanna know what all of this is about?<br><a href="https://www.youtube.com/watch?v=ZLTyX4zL2Fc&t=70s">The frog problem</a>
+
+	</div>
+	<script>
+		function tryIt() {
+			let receivedNr = document.getElementById("myText").value;
+			let result;
+			if (receivedNr < 0) {
+				alert('Very funny, ha ha :))) \n Now go insert a POSITIVE number!')
+			} else if (receivedNr > 25000000) {
+				alert('Whoa sailor! Please keep your tries under 25 milion. \n This is afterall just a javascript! :P');
+			} else {
+				result = jumpCalculator(receivedNr);
+				document.getElementById('showOff').innerHTML = `<br> ${result} <br><br>`;
+			};
+		}
+	</script>
+</body>
+
+</html>
